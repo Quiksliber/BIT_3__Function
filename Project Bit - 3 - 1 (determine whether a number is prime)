@@ -1,0 +1,35 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int prime(int x)
+{
+	int i = 0;
+	for (i = 2; i < x; i++)
+	{
+		if (x % i == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int main()
+{
+	int n = 0;
+	printf("Please enter the number you want to judge : ");
+	scanf("%d", &n);
+	if (prime(n) == 1)
+	{
+		printf("%d is a prime number!!", n);
+	}
+	else if (prime(n) == 0)
+	{
+		printf("%d is not a prime number!!", n);
+	}
+	else
+	{
+		printf("ERROR!!!");
+	}
+	return 0;
+}
