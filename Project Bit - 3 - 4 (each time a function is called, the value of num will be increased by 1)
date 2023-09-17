@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <Windows.h>
+
+void num_plus(int* num_place_0)
+{
+	(*num_place_0)++;
+}
+
+int main()
+{
+	int num = 0;
+	while (1)
+	{
+		int i = 0;
+		system("cls");
+		int* num_place = &num;
+		num_plus(num_place);
+		num = *num_place;
+		printf("num = %d\n", num);
+		printf("To continue the loop, enter 1 ;\n");
+		printf("To exit the loop, enter another number ;\n");
+		printf("Whether to continue looping ? ");
+		scanf("%d", &i);
+		if (i != 1)
+		{
+			break;
+		}
+	}
+	return 0;
+}
