@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void reprint(int x)
+{
+	if (x > 9)
+	{
+		int y = x / 10;
+		reprint(y);
+	}
+	printf("%d ", x % 10);
+}
+
+int main()
+{
+	int n = 0;
+	printf("Enter the number you want to print digit by digit : ");
+	scanf("%d", &n);
+	reprint(n);
+	return 0;
+}
