@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//Write a function to find the length of a string, but do not allow the creation of temporary variables, that is, simulate the function of "strlen".
+
+int pre_strlen(char* arr0)
+{
+	if (*arr0 != '\0')
+	{
+		return 1 + pre_strlen(arr0 + 1);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int main()
+{
+	char arr[] = "wlwlwl";
+	printf("%d",pre_strlen(arr));
+	return 0;
+}
