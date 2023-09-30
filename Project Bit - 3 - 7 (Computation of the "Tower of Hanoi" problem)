@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//Try solving the simple "Tower of Hanoi" problem.
+int m = 0;
+
+void Hanoi_main(int n, char A, char B, char C)
+{
+    m++;
+    if (n == 1) //Set the end condition for moving the plate. If A currently has another plate, then move it directly to C.
+    {
+        printf("%c -> %c    ", A, C);
+    }
+    else //Otherwise start recursion.
+    {
+        Hanoi_main(n - 1, A, C, B);//Recursively, move n - 1 disks on A to B, and C will be used as an auxiliary tower;
+        printf("%c -> %c    ", A, C);//Directly move the disc numbered n from A to C;
+        Hanoi_main(n - 1, B, A, C);//Recursively, move n - 1 disks on B to C, and A will be used as an auxiliary tower;
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Please enter the number of plates : ");
+    scanf("%d", &n);
+    Hanoi_main(n, 'A', 'B', 'C');
+    printf("Number of moves: %d times", m);
+}
